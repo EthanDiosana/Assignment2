@@ -18,3 +18,7 @@
     border: 1px solid black;
     border-radius: 5px;
 }
+
+#navBar div:hover {
+  background-color: rgb(160, 151, 139);
+}
