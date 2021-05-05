@@ -20,11 +20,11 @@ $(document).ready(function () {
 
     // encapsulate the data from the forms
     let formData = {
-      title: $('#formTitle'),
-      rating: $('#formRating'),
-      date: $('#formDate'),
-      username: $('#formUsername'),
-      content: $('#formContent')
+      title: $('#formTitle').val(),
+      rating: $('#formRating').val(),
+      date: $('#formDate').val(),
+      username: $('#formUsername').val(),
+      content: $('#formContent').val()
     }
 
     $('#formTitle').val("");
