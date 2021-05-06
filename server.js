@@ -62,6 +62,9 @@ app.post('/update-post', (req, res) => {
     console.log(req.body);
     let dat = req.body.data;
     console.log(dat[0]);
+    var attribute_edit = ["Title", "Rating", "PostDate", "Author", "Content"];
+    if (!(attribute_edit.includes(dat[0])))
+        return;
     db.query("UPDATE posts SET " + dat[0] + "=? WHERE PostID=?", [dat[1], dat[2]], (err, dbres) => {
         console.log(err);
         console.log(dbres);
