@@ -7,7 +7,7 @@
     border: 2px solid black;
 }
 
-/* This navbar styling provided by Ethan Diosana from an earlier assignment */
+/* This navbar styling provided by Ethan Diosana from an earlier assignment. */
 
 #navBar {
     font-size: 1em;
@@ -23,4 +23,26 @@
     border: 1px solid black;
     border-radius: 5px;
 }
+
+/* A cool hover styling. */
+#navBar div:hover {
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(175, 164, 149);
+}
+
+#postsContainer {
+    overflow-y: scroll;
+    border: 1px solid black;
+    border-radius: 5pt;
+    height: 80vh;
+    margin: 10pt;
+}
+
+#submitContainer {
+    margin: 10pt;
+}
+
 

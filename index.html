@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html>
 
-  <!-- AUTHORS 
+<!-- AUTHORS 
   Trevor Hong A01232148
   Ethan Diosana A01248983
   John Braithwaite A01206633
   Liam Arabsky A01229067
 -->
 
-  <head>
-    <title>Assignment 2</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/Styles/style.css">
-    <link rel="icon" type="image/png" href="Images/favicon.png">
-  </head>
+<head>
+  <title>Assignment 2</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/Styles/style.css">
+  <link rel="icon" type="image/png" href="Images/favicon.png">
+</head>
 
-  <body>
-    <div id="mainDiv">
-      <div id="navBar">
-        <div>Home</div>
-        <div>New</div>
-        <div>Hot</div>
-        <div class="navBarItem">Contact Us</div>
-      </div>
+<body>
+
+  <!-- The main div. -->
+  <div id="mainDiv">
+
+    <!-- The navbar. -->
+    <div id="navBar">
+      <div>Home</div>
+      <div>New</div>
+      <div>Hot</div>
+      <div>Contact Us</div>
+    </div>
+    
+    <!-- The div containing the post submission form. -->
+    <div id="submitContainer">
+      <label for="formTitle">Title</label>
+      <input type="text" id="formTitle" name="formTitle">
+      <label for="formRating">Rating</label>
+      <input type="text" id="formRating" name="formRating">
+      <label for="formDate">Date</label>
+      <input type="text" id="formDate" name="formDate">
+      <label for="formUsername">Username</label>
+      <input type="text" id="formUsername" name="formUsername">
+      <label for="formContent">Content</label>
+      <input type="text" id="formContent">
+      <input type="submit" id="submit" value="Submit">
+    </div>
+
+    <!-- The div that holds the posts. -->
+    <div id="postContainerContainer">
       <div id="postsContainer">
       </div>
-      <div id="submitContainer">
-        <label for="formTitle">Title</label>
-        <input type="text" id="formTitle" name="formTitle">
-        <label for="formRating">Rating</label>
-        <input type="text" id="formRating" name="formRating">
-        <label for="formDate">Date</label>
-        <input type="text" id="formDate" name="formDate">
-        <label for="formUsername">Username</label>
-        <input type="text" id="formUsername" name="formUsername">
-        <label for="formContent">Content</label>
-        <input type="text" id="formContent">
-        <input type="submit" id="submit" value="Submit">
-      </div>
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/Scripts/jqueryStyles.js"></script>
-  <script src="/Scripts/client.js"></script>
+    </div>
+
+  </div>
+</body>
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/Scripts/jqueryStyles.js"></script>
+<script src="/Scripts/client.js"></script>
 
 </html>
