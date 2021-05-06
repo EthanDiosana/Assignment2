@@ -11,6 +11,11 @@ const db = mysql.createConnection({
 });
 db.connect();
 
+/* RUN THIS SQL TO CREATE THE WORKING DATABASE:
+* ----->  CREATE DATABASE asn2;  <-----
+* the tables will be created for you.
+*/
+
 const port = 8080;
 
 app.use('/Scripts', express.static('Scripts'));
@@ -64,7 +69,20 @@ app.post('/update-post', (req, res) => {
     })
 })
 
-db.query();
+const createDatabase = `CREATE TABLE IF NOT EXISTS posts (
+    Title       text    DEFAULT NULL,
+    PostDate    text    DEFAULT NULL,
+    Content     text    DEFAULT NULL,
+    Rating      int(11) DEFAULT NULL,
+    Author      text    DEFAULT NULL,
+    PostID      int(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (PostID)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;`;
+
+db.query(createDatabase, (err, dbres) => {
+    if (err)
+        console.log(err);
+});
 
 app.listen(port, () => {
     console.log('Server started on port ' + port);
