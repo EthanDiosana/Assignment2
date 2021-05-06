@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const fs = require("fs");
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -37,8 +39,18 @@ app.get('/get-posts', (req, res) => {
     })
 })
 
-app.post('/publish', (req, res) => {
-    res.send()
+app.post('/add-post', (req, res) => {
+    let dat = req.body;
+    let datArray = [dat.title, dat.date, dat.content, dat.rating, dat.username, null];
+    db.query("INSERT INTO posts VALUES(?, ?, ?, ?, ?, ?)", datArray, (err, dbres) => {  
+        res.sendStatus(200);
+    })
+})
+
+app.post('/remove-post', (req, res) => {
+    db.query("DELETE FROM posts WHERE postid=?", [req.body.id], (err, dbres) => {
+        res.sendStatus(200);
+    })
 })
 
 app.listen(port, () => {
