@@ -24,6 +24,19 @@ $(document).ready(function () {
     event.preventDefault();
 
     // encapsulate the data from the forms
+    let formData = {
+      title: $('#formTitle').val(),
+      rating: $('#formRating').val(),
+      date: $('#formDate').val(),
+      username: $('#formUsername').val(),
+      content: $('#formContent').val()
+    }
+
+    $('#formTitle').val("");
+    $('#formRating').val("");
+    $('#formDate').val("");
+    $('#formUsername').val("");
+    $('#formContent').val("");
 
     $.ajax({
       url: "/add-post",
