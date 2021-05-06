@@ -42,12 +42,44 @@
 }
 
 #submitContainer {
-    margin: 10pt;
+    margin: 5pt;
+}
+
+.postContainer {
+    border: 1pt solid black;
+    border-radius: 5pt;
+    padding: 10pt;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr 1fr 0.5fr;
 }
 
 .postTitle {
-  background-color: red;
-  font-size: 64pt;
+    font-size: 2em;
+    color:blue;
+    grid-row-start: 1;
 }
 
+.postTitle:hover {
+    text-decoration: underline;
+}
 
+.postRating {
+    grid-row-start: 2;
+}
+
+.postDate {
+    grid-row-start: 2;
+}
+
+.postUsername {
+    grid-row-start: 2;
+}
+
+.postContent {
+    grid-row-start: 3;
+}
+
+.del {
+    width: 50pt;
+    grid-row-start: 4;
+}
