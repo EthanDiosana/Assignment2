@@ -53,6 +53,19 @@ app.post('/remove-post', (req, res) => {
     })
 })
 
+app.post('/update-post', (req, res) => {
+    console.log(req.body);
+    let dat = req.body.data;
+    console.log(dat[0]);
+    db.query("UPDATE posts SET " + dat[0] + "=? WHERE PostID=?", [dat[1], dat[2]], (err, dbres) => {
+        console.log(err);
+        console.log(dbres);
+        res.sendStatus(200);
+    })
+})
+
+db.query();
+
 app.listen(port, () => {
     console.log('Server started on port ' + port);
 })
