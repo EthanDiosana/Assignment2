@@ -75,6 +75,7 @@ $(document).ready(function () {
     let old_value = $(this)[0].innerHTML;
     $(this)[0].innerHTML = edit_box;
     document.getElementById("update_data").value = old_value;
+    document.getElementById('update_data').focus();
     $(this)[0].className = $(this)[0].className.split(" ")[0];
   })
 
