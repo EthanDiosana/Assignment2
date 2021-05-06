@@ -7,6 +7,9 @@ $(document).ready(function () {
       success: function (data) {
         //this should log all the rows from the posts table
         console.log(data);
+        for (i = 0; i < data.length; i++) {
+          
+        }
         // then can use jquery to assign text to divs
       },
       error: function (jqXHR, textStatus, errorThrown) {
@@ -14,6 +17,8 @@ $(document).ready(function () {
       }
     });
   }
+
+  retrievePosts();
 
   $('#submit').on('click', function (event) {
     event.preventDefault();
