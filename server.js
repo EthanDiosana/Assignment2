@@ -16,7 +16,7 @@ db.connect();
 // QUERY TO CREATE DATABASE AND TABLE IF THEY DO NOT ALREADY EXIST
 const createDatabase = `CREATE DATABASE IF NOT EXISTS asn2;
   use asn2;
-  CREATE TEMPORARY TABLE IF NOT EXISTS posts (
+  CREATE TABLE IF NOT EXISTS posts (
     Title       text    DEFAULT NULL,
     PostDate    text    DEFAULT NULL,
     Content     text    DEFAULT NULL,
@@ -53,14 +53,20 @@ const entry9 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VAL
 
 const entries = [entry0, entry1, entry2, entry3, entry4, entry5, entry6, entry7, entry8, entry9];
 
-
-entries.forEach(entry => {
-  db.query(entry, (err, dbres) => {
-    if (err) {
-      console.log("Error in data entry: " + err);
-    }
-  })
+db.query("SELECT COUNT(*) FROM posts", (err, res) => {
+  if (err)
+    console.log(err);
+  else if (res[0]["COUNT(*)"] < 1) {
+    entries.forEach(entry => {
+      db.query(entry, (err, dbres) => {
+        if (err) {
+          console.log("Error in data entry: " + err);
+        }
+      })
+    })
+  }
 })
+
 
 const port = 8080;
 
