@@ -89,10 +89,13 @@ $(document).ready(function () {
 
 function post_creator(title, date, content, rating, author, postid) {
   let post_block = "<div id='" + postid + "' class='postContainer'>";
+  let post_attributes = "<div class='attributeContainer'>";
   post_block += "<div class='postTitle att'>" + title + "</div>";
-  post_block += "<div class='postRating att'>" + rating + "</div>";
-  post_block += "<div class='postDate att'>" + date + "</div>";
-  post_block += "<div class='postUsername att'>" + author + "</div>";
+  post_attributes += "<div class='postRating att'>" + rating + "</div>";
+  post_attributes += "<div class='postDate att'>" + date + "</div>";
+  post_attributes += "<div class='postUsername att'>" + author + "</div>";
+  post_attributes += "</div>";
+  post_block += post_attributes;
   post_block += "<div class='postContent att'>" + content + "</div>";
   post_block += "<button type='button' class='del'>Delete</button>";
   post_block += "</div>";

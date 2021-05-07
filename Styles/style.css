@@ -50,10 +50,10 @@
     border-radius: 5pt;
     padding: 10pt;
     display: grid;
-    grid-template-rows: 1.5fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.1fr 1fr 1fr 0.5fr;
 }
 
-.postTitle {
+.postTitle {    
     font-size: 2em;
     color:blue;
     grid-row-start: 1;
@@ -63,16 +63,11 @@
     text-decoration: underline;
 }
 
-.postRating {
+.attributeContainer {
     grid-row-start: 2;
-}
-
-.postDate {
-    grid-row-start: 2;
-}
-
-.postUsername {
-    grid-row-start: 2;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 .postContent {
