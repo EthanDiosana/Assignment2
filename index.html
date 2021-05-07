@@ -11,8 +11,8 @@
 <head>
   <title>Assignment 2</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/Styles/style.css">
-  <link rel="icon" type="image/png" href="Images/favicon.png">
+  <link rel="stylesheet" href="./Styles/style.css">
+  <link rel="stylesheet" href="./Styles/tstyle.css">
 </head>
 
 <body>
@@ -30,22 +30,26 @@
     
     <!-- The div containing the post submission form. -->
     <div id="submitContainer">
-      <label for="formTitle">Title</label>
+      <label for="formTitle">Title:</label>
       <input type="text" id="formTitle" name="formTitle">
-      <label for="formRating">Rating</label>
+      <label for="formRating">Rating:</label>
       <input type="text" id="formRating" name="formRating">
-      <label for="formDate">Date</label>
+      <label for="formDate">Date:</label>
       <input type="text" id="formDate" name="formDate">
-      <label for="formUsername">Username</label>
+      <label for="formUsername">Username:</label>
       <input type="text" id="formUsername" name="formUsername">
-      <label for="formContent">Content</label>
+      <label for="formContent">Content:</label>
       <input type="text" id="formContent">
       <input type="submit" id="submit" value="Submit">
     </div>
-
-    <!-- The div that holds the posts. -->
-    <div id="postContainerContainer">
-      <div id="postsContainer">
+    <div id="postsContainer">
+      <div class="title col1">
+        <h1>Title</h1>
+      </div>
+      <div class="date col2">2029/04/04</div>
+      <div class="user col3">SteveBrule69</div>
+      <div class="postBody col4">Fire tornadoes have swept across the Midwest, rendering thousands of Americans
+        hairless.
       </div>
     </div>
 
@@ -54,7 +58,6 @@
 
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/Scripts/jqueryStyles.js"></script>
-<script src="/Scripts/client.js"></script>
+<script src="Scripts/jqueryStyles.js"></script>
 
 </html>
