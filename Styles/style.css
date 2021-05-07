@@ -78,3 +78,6 @@
     width: 50pt;
     grid-row-start: 4;
 }
+.title {
+    border-bottom: 1px solid black;
+}

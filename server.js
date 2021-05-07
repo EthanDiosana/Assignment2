@@ -4,6 +4,8 @@ const fs = require("fs");
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// CONNECT TO THE DATABASE
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -11,6 +13,7 @@ const db = mysql.createConnection({
 });
 db.connect();
 
+// QUERY TO CREATE DATABASE AND TABLE IF THEY DO NOT ALREADY EXIST
 const createDatabase = `CREATE DATABASE IF NOT EXISTS asn2;
   use asn2;
   CREATE TABLE IF NOT EXISTS posts (
@@ -27,10 +30,43 @@ db.query(createDatabase, (err, dbres) => {
   if (err)
     console.log(err);
 });
-/* RUN THIS SQL TO CREATE THE WORKING DATABASE:
-* ----->  CREATE DATABASE asn2;  <-----
-* the tables will be created for you.
-*/
+
+const entry0 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Hat Hoax', '2021-01-12', 'Norman Reedus has never worn a hat.', 1, 'Jack Flimflam')`;
+
+const entry1 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Attack Dolphins', '2021-01-16', 'The marine mammals are exacting their vengeance.', 4, 'Sam Neil')`;
+
+const entry2 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Microplastics', '2021-01-20', 'I think microplastics have done some good things for our bodies.', 1, 'Sandra Know-Nothing')`;
+
+const entry3 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Inland Empire', '2021-01-21', 'Lynchian fiction is a subset of Lovecraftian fiction whether we like it or not.', 5, 'Deirdre Sky')`;
+
+const entry4 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Dog Daze of Summer', '2021-01-21', 'I miss the days where you could just eat a muffin and like it.', 1, 'Werner Herzog')`;
+
+const entry5 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('John Kerry', '2021-01-22', 'Great big ocean water surrounds Guam.', 8, 'Anderson Cooper')`;
+
+const entry6 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Time', '2021-01-22', 'The gravity of time is unmatched: we plummet ever forward.', 4, 'Alice Redgum')`;
+
+const entry7 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Accelerating Change', '2021-01-23', 'Verner Vinge has come unhinged and I think we overlook that.', 2, 'Roger Clemens')`;
+
+const entry8 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Delirium Tremens', '2021-01-24', 'The name of this Dutch beer belittles the suffering of the hungover.', 1, 'W.C. Fields')`;
+
+const entry9 = `INSERT INTO posts (Title, PostDate, Content, Rating, Author) VALUES ('Carthago Delenda Est', '2021-01-25', 'Wait, was not Carthage right here?', 1, 'Cato the Censor')`;
+
+const entries = [entry0, entry1, entry2, entry3, entry4, entry5, entry6, entry7, entry8, entry9];
+
+db.query("SELECT COUNT(*) FROM posts", (err, res) => {
+  if (err)
+    console.log(err);
+  else if (res[0]["COUNT(*)"] < 1) {
+    entries.forEach(entry => {
+      db.query(entry, (err, dbres) => {
+        if (err) {
+          console.log("Error in data entry: " + err);
+        }
+      })
+    })
+  }
+})
+
 
 const port = 8080;
 
