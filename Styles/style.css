@@ -2,6 +2,13 @@
     margin: 0px;
 }
 
+.postContainer {
+    margin: 5pt;
+    border: 2px solid black;
+}
+
+/* This navbar styling provided by Ethan Diosana from an earlier assignment. */
+
 #navBar {
     font-size: 1em;
     padding: 10px;  
@@ -17,23 +24,62 @@
     border-radius: 5px;
 }
 
-#mainDiv h1{
-    margin: 10px;
-    font-family: 'Antonio', sans-serif;
-}
-
-#newsFeedContainer {
-    background-color: whitesmoke;
-    display: flex;
-    flex-flow: column;
+/* A cool hover styling. */
+#navBar div:hover {
+    margin-left: 10px;
+    padding: 10px;
     border: 1px solid black;
-    margin: 10px;
     border-radius: 5px;
-    height: 80vh;
+    background-color: rgb(175, 164, 149);
+}
+
+#postsContainer {
     overflow-y: scroll;
+    border: 1px solid black;
+    border-radius: 5pt;
+    height: 80vh;
+    margin: 10pt;
 }
 
-#newsFeedContainer h1 {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+#submitContainer {
+    margin: 5pt;
 }
 
+.postContainer {
+    border: 1pt solid black;
+    border-radius: 5pt;
+    padding: 10pt;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr 1fr 0.5fr;
+}
+
+.postTitle {
+    font-size: 2em;
+    color:blue;
+    grid-row-start: 1;
+}
+
+.postTitle:hover {
+    text-decoration: underline;
+}
+
+.postRating {
+    grid-row-start: 2;
+}
+
+.postDate {
+    grid-row-start: 2;
+}
+
+.postUsername {
+    grid-row-start: 2;
+}
+
+.postContent {
+    grid-row-start: 3;
+}
+
+.del {
+    width: 50pt;
+    grid-row-start: 4;
+}
